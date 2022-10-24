@@ -14,7 +14,8 @@ class SourceCreateView(CreateAPIView):
     def post(self, request, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
+            print(serializer.data.get("stdin"));
             if serializer.data.get("language") == "python":
-                return Response(execute_python_code(serializer.data.get("source_code"), serializer.data.get("input")))
+                return Response(execute_python_code(serializer.data.get("source_code"), serializer.data.get("stdin")))
             if serializer.data.get("language") == "cpp":
-                return Response(execute_cpp_code(serializer.data.get("source_code"), serializer.data.get("input")))
+                return Response(execute_cpp_code(serializer.data.get("source_code"), serializer.data.get("stdin")))

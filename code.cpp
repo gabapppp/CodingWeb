@@ -1,8 +1,9 @@
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-int main() {
-	cout << "Xin chao!";
+int main(){
+	int a;
+	cin >> a;
+	cout << "Hi " << a << endl;
 	return 0;
 }
