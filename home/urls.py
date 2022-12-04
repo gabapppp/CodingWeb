@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import SourceCreateView
+from .views import SourceCreateView, ExecuteView
 
 urlpatterns = [
-    path('execute/', SourceCreateView.as_view(), name="create-source")
+    path('source/', SourceCreateView.as_view()),
+    path('execute/', ExecuteView.as_view())
 ]
